@@ -1,0 +1,123 @@
+:root {
+    --bg-color: #121212;
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #b3b3b3;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --accent-color: #1e88e5;
+    --cell-bg-color: transparent;
+    --cell-hover-bg-color: rgba(255, 255, 255, 0.1);
+    --glass-bg-color: rgba(44, 44, 46, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    background-image: 
+        radial-gradient(at 0% 100%, hsla(217, 30%, 25%, 0.3) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(240, 30%, 20%, 0.4) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, hsla(200, 25%, 15%, 0.2) 0px, transparent 50%);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#clock {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.search-form {
+    margin-bottom: 3rem;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--glass-bg-color);
+    color: var(--primary-text-color);
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.search-bar:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(44, 44, 46, 0.7);
+}
+
+.schedule-container {
+    overflow-x: auto;
+    background-color: var(--glass-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+#schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+#schedule-table th,
+#schedule-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    height: 60px;
+}
+
+#schedule-table th {
+    background-color: var(--cell-bg-color);
+    color: var(--secondary-text-color);
+    font-weight: 700;
+}
+
+#schedule-table tbody th {
+    width: 80px;
+}
+
+#schedule-table td {
+    background-color: var(--cell-bg-color);
+    transition: background-color 0.3s ease;
+    cursor: text;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#schedule-table td:hover {
+    background-color: var(--cell-hover-bg-color);
+}
+
+#schedule-table td:focus {
+    outline: 2px solid var(--accent-color);
+    background-color: var(--cell-hover-bg-color);
+    white-space: normal;
+    overflow: visible;
+}
