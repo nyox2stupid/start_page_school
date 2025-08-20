@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Schedule functionality
     const scheduleTableBody = document.querySelector('#schedule-table tbody');
-    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
     const hours = 10;
 
     function generateSchedule() {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             
             const hourCell = document.createElement('th');
-            hourCell.textContent = `Hour ${i}`;
+            hourCell.textContent = `Stunde ${i}`;
             row.appendChild(hourCell);
 
             days.forEach(day => {
